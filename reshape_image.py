@@ -17,3 +17,4 @@ for image in os.listdir(read_dir):
         reshaped = cv.resize(img_cv, re_shape)
         save_dir = os.join(write_dir, image)
         cv.imwrite(save_dir, reshaped)
+    
