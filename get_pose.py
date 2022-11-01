@@ -7,7 +7,7 @@ def get_pose(img_path):
     given an image path, read a respective pose json file from folder
     img_path: path of image of dataset/images/<class>/<image_name>.png
     assume pose json file is stored at dataset/pose/<class>/<image_name>.png
-    return: #TODO 
+    return: a dictionary containing position of pose_keypoints_2d, hand_left_keypoints_2d and hand_right_keypoints_2d   
     '''
     img_basename = path.basename(img_path)
     img_name = path.splitext(img_basename)[0]
