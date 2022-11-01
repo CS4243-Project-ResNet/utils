@@ -11,17 +11,11 @@ def get_pose(img_path):
     '''
     img_basename = path.basename(img_path)
     img_name = path.splitext(img_basename)[0]
-    print(img_name)
     img_dirname = path.dirname(img_path)
-    print(img_dirname) 
     imgs_dir, class_n = path.split(img_dirname)
-    print(imgs_dir) 
-    print(class_n) 
     dataset_dir = path.dirname(imgs_dir[:-1])
-    print(dataset_dir) 
-    pose_basename = img_name + '.json'
+    pose_basename = img_name + '_keypoints.json'
     pose_dir = path.join(dataset_dir, 'pose', class_n, pose_basename)
-    print(pose_dir) 
 
     f = open(pose_dir)
     pose_data = json.load(f)['people'][0]
