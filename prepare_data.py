@@ -12,7 +12,7 @@ to_pickle = {
     "test": []
     }
 
-data_dir = "/home/t/tianqi/CS4243_proj/dataset/data"
+data_dir = "/home/t/tianqi/CS4243_proj/dataset/splitted"
 for split in os.listdir(data_dir):
     print(split)
     subdir_path = os.path.join(data_dir, split)
@@ -20,8 +20,8 @@ for split in os.listdir(data_dir):
         print(label)
         split_path = os.path.join(subdir_path, label)
         for img in os.listdir(split_path):
-            print(img)
             img_path = os.path.join(split_path, img)
+            print(img_path)
             img_loaded = MyImage(img_path, label)
             to_pickle[split].append(img_loaded)
 
