@@ -1,6 +1,6 @@
 #bin/bash
 
-folder=/home/t/tianqi/CS4243_proj/cs4243_smallest
+folder=/home/t/tianqi/CS4243_proj/images
 save_folder=/home/t/tianqi/CS4243_proj/seg
 for subfolder in $folder/*; do
     for file in $subfolder/*; do
