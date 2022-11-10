@@ -56,7 +56,7 @@ def get_seg_int_split(img_path):
     # print(imgs_dir)
     # print(class_n)
     dataset_dir = path.dirname(imgs_dir[:-1])
-    dataset_dir = path.dirname(imgs_dir[:-1])
+    dataset_dir = path.dirname(dataset_dir[:-1])
     seg_dir = path.join(dataset_dir, 'seg', class_n, img_basename)
     # print(seg_dir)
     im_read = cv.imread(seg_dir, 0)

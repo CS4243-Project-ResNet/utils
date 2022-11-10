@@ -1,6 +1,6 @@
 import torch
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='best_11_09.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='/home/t/tianqi/CS4243_proj/utils/best_11_09.pt')
 model.conf = 0.1
 
 def get_classification(file_path):
