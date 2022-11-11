@@ -66,11 +66,17 @@ def get_pose_merge_s(img_path):
     pose_dir = path.join(dataset_dir, 'pose', class_n, pose_basename)
 
     f = open(pose_dir)
-    pose_data = json.load(f)['people'][0]
-    useless_info = ['person_id', 'face_keypoints_2d', 'pose_keypoints_3d', 'face_keypoints_3d', 'hand_left_keypoints_3d', 'hand_right_keypoints_3d']
-    for w in useless_info:
-        pose_data.pop(w)
-    pose_cat = []
-    for key, value in pose_data.items():
-        pose_cat += value
-    return np.array(pose_cat)
+
+    pose_j = json.load(f)['people']
+    if len(pose_j) > 0:
+        pose_data = pose_j[0]
+        useless_info = ['person_id', 'face_keypoints_2d', 'pose_keypoints_3d', 'face_keypoints_3d', 'hand_left_keypoints_3d', 'hand_right_keypoints_3d']
+        for w in useless_info:
+            pose_data.pop(w)
+        pose_cat = []
+        for key, value in pose_data.items():
+            pose_cat += value
+        ret = np.array(pose_cat)
+    else:
+        ret = np.zeros(201)
+    return ret

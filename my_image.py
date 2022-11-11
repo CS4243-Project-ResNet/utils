@@ -4,7 +4,7 @@ from PIL import Image
 
 import my_utils.seg as seg
 import my_utils.get_pose as pose
-from my_utils.get_yolov5 import get_classifcation_bounding_box, get_classification
+from my_utils.yolov5_inference import get_classifcation_bounding_box, get_classification_s
 
 class_dict = {
     "carrying": 0,
@@ -21,8 +21,8 @@ class MyImage:
         self.seg_bin = Image.fromarray(seg.get_seg_bin_s(img_path))
         self.seg_masked = Image.fromarray(seg.get_seg_masked_s(self.img, img_path, seg_thres)) #masked seg image
         self.pose = pose.get_pose_merge_s(img_path) # 
-        self.weapon_r = get_classifcation_bounding_box(img_path) #
-        self.weapon_c = get_classification(img_path)
+        # self.weapon_r = get_classifcation_bounding_box(img_path) #
+        self.weapon_c = get_classification_s(img_path)
     
     def load_img(img_path):
         Image.open(img_path)

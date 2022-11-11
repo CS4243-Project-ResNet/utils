@@ -1,7 +1,7 @@
 import cv2 as cv
 import seg
-
-img_path = "/home/t/tianqi/CS4243_proj/dataset/splitted/train/carrying/A0194484R_20220903_carrying_11170.4411_200.png"
+/home/t/tianqi/CS4243_proj/dataset/splitted/train/threat/A0204839Y_20220903_threat_00050.69114_100.png
+img_path = "/home/t/tianqi/CS4243_proj/dataset/splitted/train/threat/A0204839Y_20220903_threat_00050.69114_100.png"
 img = cv.imread(img_path)
 save_dir = "/home/t/tianqi/CS4243_proj/PP-HumanSeg/img_trial/out/A0194484R_20220903_carrying_11170.4411_200_2.png"
 
