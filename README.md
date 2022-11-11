@@ -16,7 +16,10 @@ dataset/
 |--seg/ 
 |  |--carry/<image_name>.png
 |  |  ...
-|    
-|--?detection/
+|   
+|--my_utils/
+   |--xxx.py
+|--nn_merge/
+   |--xx.py
 ```
 ## Seg Threshold
