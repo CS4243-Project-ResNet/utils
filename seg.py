@@ -33,7 +33,7 @@ def get_seg_bin(img_path, thres=50):
     return: binary mask of thresed seg
     '''
     seg = get_seg_int(img_path)
-    ret, mask = cv.threshold(seg, thres, 255, cv.THRESH_BINARY)
+    ret, mask = cv.threshold(seg, thres, 1, cv.THRESH_BINARY)
     return mask
 
 def get_seg_masked(img, img_path, thres=50):
@@ -49,6 +49,7 @@ def get_seg_int_split(img_path):
     assume segmentation mask is stored at dataset/seg/<class>/<image_name>.png
     return: gray level np.uint8 [0, 255] with image.shape
     '''
+    print(img_path)
     img_basename = path.basename(img_path)
     img_dirname = path.dirname(img_path)
     # print(img_dirname)

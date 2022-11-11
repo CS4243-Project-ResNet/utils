@@ -3,9 +3,12 @@
 ```
 dataset/
 |--images/
-|  |--carry/
-|  |--normal/
-|  |--threat
+    |--train
+    |  |--carry/
+    |  |--normal/
+    |  |--threat
+    |--val
+    ...
 |--pose/
 |  |--carry/<image_name>.json
 |  |--normal/

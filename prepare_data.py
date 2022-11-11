@@ -1,3 +1,5 @@
+# memory error
+
 import datetime as dt
 import os
 import pickle as pkl
@@ -11,6 +13,7 @@ to_pickle = {
     "val": [],
     "test": []
     }
+
 
 data_dir = "/home/t/tianqi/CS4243_proj/dataset/splitted"
 for split in os.listdir(data_dir):

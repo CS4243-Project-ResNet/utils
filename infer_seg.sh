@@ -1,7 +1,7 @@
 #bin/bash
 
-folder=/home/t/tianqi/CS4243_proj/images
-save_folder=/home/t/tianqi/CS4243_proj/seg
+folder=/home/t/tianqi/CS4243_proj/dataset/images
+save_folder=/home/t/tianqi/CS4243_proj/dataset/seg
 for subfolder in $folder/*; do
     for file in $subfolder/*; do
         save_filename=${save_folder}/$(basename ${subfolder})/$(basename ${file})
