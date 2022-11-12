@@ -115,17 +115,29 @@ def get_classification_raw(file_path):
     else:
         return 1
 
+def get_gun_only(file_path):
+    gun_results = gun_model(file_path, size=540)
 
+    if len(gun_results.xyxy[0]) == 0:
+        return -1
+    else:
+        return int(gun_results.xyxy[0][0][5])
+    
 if __name__ == "__main__":
-    base_path = '/home/t/tianqi/CS4243_proj/dataset/images/threat/'
-    files = os.listdir(base_path)
-    
-    dic = defaultdict(lambda: 0)
-    
-    for f in files:
-        dic[get_classification_raw(base_path + f)] += 1
-    
-    print(dic)
+    base_path = [
+        '/home/t/tianqi/CS4243_proj/dataset/images/threat/',
+        '/home/t/tianqi/CS4243_proj/dataset/images/carrying/',
+        '/home/t/tianqi/CS4243_proj/dataset/images/normal/'
+    ]
+
+    for path in base_path:
+        print(path)
+        files = os.listdir(path)
+
+        dic = defaultdict(lambda: 0)
+        for f in files:
+            dic[get_gun_only(path + f)] += 1
+        print(dic)
     
     # get_classification(base_path + files[0])
-    get_classification("/home/t/tianqi/CS4243_proj/dataset/images/carrying/A0222462N_20220831_carrying_00010.49888_100.png")
+    # get_classification("/home/t/tianqi/CS4243_proj/dataset/images/carrying/A0222462N_20220831_carrying_00010.49888_100.png")
