@@ -29,7 +29,7 @@ dataset/
 |  |--carry/<image_name>.png
 |  |  ...
 |   
-|--my_utils/
+|--my_utils/ (required renaming utils repo to my_utils
    |--xxx.py
 |--nn_merge/
    |--xx.py
