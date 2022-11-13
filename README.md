@@ -50,8 +50,9 @@ CS4243_proj/
    |--<seg with resnet>.py/ipynb
 |--nn_merge/
    |--merge_mlp_<number>.py --> final combination for mlp training (4 experimented to perform the best)
-   |--my_dataset_1.py --> dataset and dataloader definition
-   |--linear_combination.py
+   |--my_dataset_1.py --> dataset and dataloader definition (for mlp combination)
+   |--linear_combination.py --> linear combination of previous 3 parts
+   |--my_dataset_2.py --> dataset and dataloader definition (for linear combination)
 |--my_utils/ --> util files (abstraction for preprocessing)
 
 ```
