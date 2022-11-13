@@ -21,10 +21,10 @@ class MyImage:
         self.img_t = Image.fromarray(self.img)
         self.c_id = class_dict[label] # 0 for carry, 1 for normal, 2 for threat
         # self.seg_bin = Image.fromarray(seg.get_seg_bin_s(img_path))
-        self.seg_masked = Image.fromarray(mask_img_with_box(self.img, img_path)) # Image.fromarray(mask_img_with_box(self.img, img_path))  #masked seg image
+        self.seg_masked = Image.fromarray(mask_img_with_box(self.img, img_path)) #masked seg image
         self.pose = pose.get_pose_merge_s(img_path) # 
         # self.weapon_r = get_classifcation_bounding_box(img_path) #
-        self.weapon_c = get_classification_s(img_path)
+        # self.weapon_c = get_classification_s(img_path)
     
     def load_img(img_path):
         Image.open(img_path)

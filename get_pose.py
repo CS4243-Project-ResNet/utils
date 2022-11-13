@@ -49,6 +49,12 @@ def get_pose_s(img_path):
         pose_data.pop(w)
     return pose_data
 
+pose_len = {
+    'pose_keypoints_2d': 75,
+    'hand_left_keypoints_2d': 63,
+    'hand_right_keypoints_2d': 63,
+}
+
 def get_pose_merge_s(img_path):
     '''
     given an image path, read a respective pose json file from folder
@@ -70,13 +76,18 @@ def get_pose_merge_s(img_path):
     pose_j = json.load(f)['people']
     if len(pose_j) > 0:
         pose_data = pose_j[0]
+        # print(pose_data)
         useless_info = ['person_id', 'face_keypoints_2d', 'pose_keypoints_3d', 'face_keypoints_3d', 'hand_left_keypoints_3d', 'hand_right_keypoints_3d']
         for w in useless_info:
             pose_data.pop(w)
         pose_cat = []
         for key, value in pose_data.items():
+            # print(len(value))
+            if len(value) == 0:
+                print("*********")
+                value = np.zeros(pose_len[key]).tolist()
             pose_cat += value
         ret = np.array(pose_cat)
     else:
-        ret = np.zeros(201)
+        ret = np.zeros(64)
     return ret
